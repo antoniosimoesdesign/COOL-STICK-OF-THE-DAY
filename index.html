@@ -13,62 +13,149 @@
 
     <div class="wrapper">
      
-            <div class="title" id="title1" ><a href="#upper"><img  src="./img/COOL STICK OF THE DAY.webp"></a></div> 
+            <div class="title" id="title1"><img  src="./img/COOL STICK OF THE DAY.webp"></div> 
 
-<div class="space-top" id="upper"></div>
+<div class="space-top"></div>
 
         <div class="container">
 
         <div class="containers">
-                <img class="work-images" src="./img/sticks/24_02_26.webp">
+                <img class="media-item" src="./img/sticks/25_02_26.webp">
+        </div>    
+
+        <div class="containers">
+                <img class="media-item" src="./img/sticks/24_02_26.webp">
         </div>    
                 
         <div class="containers">
-                <img class="work-images" src="./img/sticks/23_02_26.webp">
+                <img class="media-item" src="./img/sticks/23_02_26.webp">
         </div>        
 
         <div class="containers">
-                <img class="work-images" src="./img/sticks/22_02_26.webp">
+                <img class="media-item" src="./img/sticks/22_02_26.webp">
         </div>   
                 
         <div class="containers">
-                <img class="work-images" src="./img/sticks/21_02_26.webp">
+                <img class="media-item" src="./img/sticks/21_02_26.webp">
         </div>
 
         <div class="containers">
-                <img class="work-images" src="./img/sticks/20_02_26.webp">
+                <img class="media-item" src="./img/sticks/20_02_26.webp">
         </div>
 
         <div class="containers">
-                <img class="work-images" src="./img/sticks/19_02_26.webp">
+                <img class="media-item" src="./img/sticks/19_02_26.webp">
 
         </div>
         
         <div class="containers">
-                <img class="work-images" src="./img/sticks/18_02_26.webp">
+                <img class="media-item" src="./img/sticks/18_02_26.webp">
              
         </div>        
 
          <div class="containers">
-                <img class="work-images" src="./img/sticks/17_02_26.webp">
+                <img class="media-item" src="./img/sticks/17_02_26.webp">
 
         </div>  
 
         <div class="containers">
-                <img class="work-images" src="./img/sticks/16_02_26.webp">
+                <img class="media-item" src="./img/sticks/16_02_26.webp">
 
         </div>
         
             </div>   
+                </div>
+            <div id="mediaModal" class="modal">
+                <div class="top-bar2">
+                    <span class="close">&times;</span>
+                </div>
+                <div class="modal-content">
+                    <img class="prev" src="./img/arrow.png">
+                    <img id="modalImage" class="modal-media" src="" alt="">
+                    <img class="next" src="./img/arrow.png">
+                </div>
+            </div>
         </div>
-<!--<div class="footer">© Portfolio, António Simões</div> -->
-    
-    </div>
-      <div id="lightbox"  class="lightbox">
-        <button id="close-btn">&times;</button>
-        <img id="lightbox-image" src="" >
-      </div> 
+<div class="footer">
+   <div class="footer-two"> © COOL STICK OF THE DAY, by <a href="https://antoniosimoesdesign.github.io/Portfolio.io/index.html" target="_blank"> António Simões</a></diV>
+</div>
 
-    <script src="./js/lightbox.js"></script> 
+    <script>
+    const mediaItems = document.querySelectorAll('.media-item');
+    const modal = document.getElementById('mediaModal');
+    const modalImage = document.getElementById('modalImage');
+    const closeBtn = document.querySelector('.close');
+
+    let currentIndex = -1;
+
+    function showModal(index) {
+        const item = mediaItems[index];
+        const src = item.src || item.querySelector('source').src;
+        if (item.tagName === 'IMG') {
+            modalImage.src = src;
+            modalImage.style.display = 'block';
+        
+        } 
+        modal.style.display = 'flex';
+    }
+
+
+    mediaItems.forEach((item, index) => {
+        item.addEventListener('click', () => {
+            currentIndex = index;
+            showModal(currentIndex);
+        });
+    });
+
+  
+    closeBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+        modalVideo.pause(); 
+    });
+
+
+
+const prevBtn = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
+
+function showNextItem() {
+    currentIndex = (currentIndex + 1) % mediaItems.length;
+    showModal(currentIndex);
+}
+
+function showPrevItem() {
+    currentIndex = (currentIndex - 1 + mediaItems.length) % mediaItems.length;
+    showModal(currentIndex);
+}
+
+
+nextBtn.addEventListener('click', showNextItem);
+prevBtn.addEventListener('click', showPrevItem);
+
+
+let touchStartX = 0;
+
+modal.addEventListener('touchstart', (event) => {
+    touchStartX = event.touches[0].clientX;
+});
+
+modal.addEventListener('touchend', (event) => {
+    const touchEndX = event.changedTouches[0].clientX;
+    if (touchStartX - touchEndX > 50) {
+        showNextItem();
+    } else if (touchStartX - touchEndX < -50) {
+        showPrevItem();
+    }
+});
+
+    function navigateTo(url) {
+        window.location.href = url;
+    }
+
+    function navigateToDois(url) {
+        window.href = url;
+    }
+    
+</script>
 </body>
 </html>
