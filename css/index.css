@@ -39,6 +39,7 @@ cursor: pointer;
 width: 95%;
 height: 100%;
 position: relative;
+cursor: zoom-in;
 }
 
 .space-top{
