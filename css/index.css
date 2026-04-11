@@ -161,11 +161,12 @@ img:hover  {
     font-size: 50px;
     color: #000000;
     cursor: pointer;
+
 }
 
 .close:hover,
 .close:focus {
-    color: #b0b0a0;
+    
     text-decoration: none;
     cursor: pointer;
 }
