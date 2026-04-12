@@ -126,8 +126,8 @@ img:hover  {
 .modal-media {
     width: 100%;
     height: auto;
-    max-height: 95vh;
-       border-radius: 20px;
+    max-height: 80vh;
+    border-radius: 20px;
 }
 
 .modal .prev, .modal .next {
@@ -154,14 +154,25 @@ img:hover  {
     rotate: 90deg;
 }
 
-.close {
+/* .close {
     position: absolute;
     top: 10px;
     right: 40px;
     font-size: 50px;
     color: #000000;
     cursor: pointer;
+} */
 
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 60px;
+    font-size: 50px;
+    cursor: pointer;
+width: 2em;
+height: auto;
+  
 }
 
 .close:hover,
@@ -171,7 +182,23 @@ img:hover  {
     cursor: pointer;
 }
 
-@media only screen and (max-width: 750px) {
+
+
+@media only screen and (max-width: 1050px) {
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    column-gap: 5px;
+    row-gap: 25px;
+    margin-left: 10em;
+    margin-right: 1em;
+    margin-top: 1.5em;
+    justify-items: center;
+}
+}
+
+@media only screen and (max-width: 800px) {
     
      body {
         height: 100%;
@@ -244,6 +271,23 @@ display: none;
 
 .media-item{
       border-radius: 10px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 50px;
+    cursor: pointer;
+    width: 2em;
+    height: auto;
+}
+
+.modal-media {
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+    border-radius: 20px;
 }
 
 }
