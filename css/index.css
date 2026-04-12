@@ -274,16 +274,17 @@ display: none;
 }
 
 .close {
-    position: absolute;
-    top:0;
-    right: 0;
-    margin-left:auto;
-    margin-right:3em;
-    margin-top:12em;
-    font-size: 50px;
-    cursor: pointer;
-    width: 3em;
-    height: auto;
+  position: absolute;
+  position: absolute;
+  margin-left: auto;
+  left: 0;
+  right: 0;
+  margin-right: auto;
+  font-size: 50px;
+  cursor: pointer;
+  width: 3em;
+  height: auto;
+  top: 12.5em;
 }
 
 .modal-media {
