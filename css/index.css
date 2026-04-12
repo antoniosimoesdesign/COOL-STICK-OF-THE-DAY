@@ -275,7 +275,7 @@ display: none;
 
 .close {
     position: absolute;
-    top: 20px;
+    top: 5%;
     right: 25px;
     font-size: 50px;
     cursor: pointer;
