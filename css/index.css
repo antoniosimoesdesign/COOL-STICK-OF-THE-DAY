@@ -144,13 +144,15 @@ img:hover  {
 
 .modal .prev {
     left: 60px;
-    max-width: 2.5em;
+    width: auto;
+    max-height: 3em;
     rotate: -90deg;
 }
 
 .modal .next {
-    right: 60px;
-    max-width: 2.5em;
+    right:60px;
+    width: auto;
+    max-height: 3em;
     rotate: 90deg;
 }
 
@@ -277,13 +279,14 @@ display: none;
   position: absolute;
   margin-left: auto;
   margin-right: auto;
-  top:4%;
+  top:93%;
   left: 0;
   right: 0;
   bottom:0;
   cursor: pointer;
   width: 2.7em;
   height: auto;
+  
 }
 
 .modal-media {
