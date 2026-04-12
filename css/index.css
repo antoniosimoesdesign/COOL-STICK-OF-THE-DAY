@@ -275,11 +275,11 @@ display: none;
 
 .close {
     position: absolute;
-    top: 93%;
-    right: 40%;
+    top: 85%;
+    right: 35%;
     font-size: 50px;
     cursor: pointer;
-    width: 2em;
+    width: 3em;
     height: auto;
 }
 
