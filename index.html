@@ -19,6 +19,10 @@
         <div class="container">
 
         <div class="containers">
+                <img class="media-item" src="./img/sticks/03_05_26.webp">
+        </div>
+
+        <div class="containers">
                 <img class="media-item" src="./img/sticks/02_05_26.webp">
         </div>
 
@@ -378,6 +382,18 @@
     });
 
 
+    document.addEventListener('keydown', (event) => {
+    // Only trigger if the modal is currently visible
+    if (window.getComputedStyle(modal).display !== 'none') {
+        if (event.key === 'Escape') {
+             modal.style.display = 'none';
+        modalVideo.pause(); 
+        }
+    }
+});
+
+
+
 
 const prevBtn = document.querySelector('.prev');
 const nextBtn = document.querySelector('.next');
@@ -385,6 +401,7 @@ const nextBtn = document.querySelector('.next');
 function showNextItem() {
     currentIndex = (currentIndex + 1) % mediaItems.length;
     showModal(currentIndex);
+    
 }
 
 function showPrevItem() {
@@ -393,8 +410,28 @@ function showPrevItem() {
 }
 
 
+
 nextBtn.addEventListener('click', showNextItem);
+
+document.addEventListener('keydown', (event) => {
+    // Only trigger if the modal is currently visible
+    if (window.getComputedStyle(modal).display !== 'none') {
+        if (event.key === 'ArrowRight') {
+            showNextItem(); // <-- Calls the action!
+        }
+    }
+});
+
 prevBtn.addEventListener('click', showPrevItem);
+
+document.addEventListener('keydown', (event) => {
+    // Only trigger if the modal is currently visible
+    if (window.getComputedStyle(modal).display !== 'none') {
+        if (event.key === 'ArrowLeft') {
+            showPrevItem(); // <-- Calls the action!
+        }
+    }
+});
 
 
 let touchStartX = 0;
@@ -402,6 +439,7 @@ let touchStartX = 0;
 modal.addEventListener('touchstart', (event) => {
     touchStartX = event.touches[0].clientX;
 });
+
 
 modal.addEventListener('touchend', (event) => {
     const touchEndX = event.changedTouches[0].clientX;
@@ -412,13 +450,6 @@ modal.addEventListener('touchend', (event) => {
     }
 });
 
-    function navigateTo(url) {
-        window.location.href = url;
-    }
-
-    function navigateToDois(url) {
-        window.href = url;
-    }
     
 </script>
 </body>
